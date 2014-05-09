@@ -117,12 +117,12 @@
 			children = (
 				6CA30A0B191D9CE40043C59C /* AppDelegate.h */,
 				6CA30A0C191D9CE40043C59C /* AppDelegate.m */,
-				6CA30A0E191D9CE40043C59C /* Main.storyboard */,
 				6CA30A11191D9CE40043C59C /* FirstViewController.h */,
 				6CA30A12191D9CE40043C59C /* FirstViewController.m */,
+				6CA30A17191D9CE50043C59C /* Images.xcassets */,
+				6CA30A0E191D9CE40043C59C /* Main.storyboard */,
 				6CA30A14191D9CE40043C59C /* SecondViewController.h */,
 				6CA30A15191D9CE40043C59C /* SecondViewController.m */,
-				6CA30A17191D9CE50043C59C /* Images.xcassets */,
 				6CA30A03191D9CE40043C59C /* Supporting Files */,
 			);
 			path = MyLocations;
