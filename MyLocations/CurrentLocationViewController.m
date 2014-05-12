@@ -133,7 +133,7 @@
 			statusMessage = @"Press the Button to Start";
 		}
 		
-		self.messageLabel.text = @"Press the Button to Start";
+		self.messageLabel.text = statusMessage;
 	}
 }
 
