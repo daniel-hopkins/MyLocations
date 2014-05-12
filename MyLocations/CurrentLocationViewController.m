@@ -34,6 +34,7 @@
 {
     [super viewDidLoad];
 	[self updateLabels];
+	[self configureGetButton];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -45,8 +46,17 @@
 
 - (IBAction)getLocation:(id)sender
 {
-	[self startLocationManager];
+	if (_updatingLocation) {
+		[self stopLocationManager];
+	} else {
+		_location = nil;
+		_lastLocationError = nil;
+		
+		[self startLocationManager];
+	}
+	
 	[self updateLabels];
+	[self configureGetButton];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -61,6 +71,7 @@
 	[self stopLocationManager];
 	_lastLocationError = error;
 	[self updateLabels];
+	[self configureGetButton];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -69,9 +80,28 @@
 	
 	NSLog(@"didUpdateLocation %@", newLocation);
 	
-	_lastLocationError = nil;
-	_location = newLocation;
-	[self updateLabels];
+	if ([newLocation.timestamp timeIntervalSinceNow] < -5.0) {
+		return;
+	}
+	
+	if (newLocation.horizontalAccuracy < 0) {
+		return;
+	}
+	
+	if (_location == nil || _location.horizontalAccuracy > newLocation.horizontalAccuracy) {
+		_lastLocationError = nil;
+		_location = newLocation;
+		[self updateLabels];
+		
+		if (newLocation.horizontalAccuracy <= _locationManager.desiredAccuracy) {
+			NSLog(@"*** We're done!");
+			[self stopLocationManager];
+			[self configureGetButton];
+		}
+		
+	}
+	
+	
 }
 
 - (void)updateLabels
@@ -104,6 +134,15 @@
 		}
 		
 		self.messageLabel.text = @"Press the Button to Start";
+	}
+}
+
+- (void)configureGetButton
+{
+	if (_updatingLocation) {
+		[self.getButton setTitle:@"Stop" forState:UIControlStateNormal];
+	} else {
+		[self.getButton setTitle:@"Get My Location" forState:UIControlStateNormal];
 	}
 }
 
