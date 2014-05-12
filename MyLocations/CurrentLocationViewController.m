@@ -218,15 +218,32 @@
 		_locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
 		[_locationManager startUpdatingLocation];
 		_updatingLocation = YES;
+		
+		[self performSelector:@selector(didTimeOut:) withObject:nil afterDelay:60];
 	}
 }
 
 - (void)stopLocationManager
 {
 	if (_updatingLocation) {
+		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(didTimeOut:) object:nil];
 		[_locationManager stopUpdatingLocation];
 		_locationManager.delegate = nil;
 		_updatingLocation = NO;
+	}
+}
+
+- (void)didTimeOut:(id)obj
+{
+	NSLog(@"*** Time out");
+	
+	if (_location == nil) {
+		[self stopLocationManager];
+		
+		_lastLocationError = [NSError errorWithDomain:@"MyLocationsErrorDomain" code:1 userInfo:nil];
+		
+		[self updateLabels];
+		[self configureGetButton];
 	}
 }
 
