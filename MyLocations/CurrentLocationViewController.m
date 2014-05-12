@@ -96,6 +96,12 @@
 		return;
 	}
 	
+	CLLocationDistance distance = MAXFLOAT;
+	if (_location != nil) {
+		distance = [newLocation distanceFromLocation:_location];
+	}
+	
+	
 	if (_location == nil || _location.horizontalAccuracy > newLocation.horizontalAccuracy) {
 		_lastLocationError = nil;
 		_location = newLocation;
@@ -105,6 +111,10 @@
 			NSLog(@"*** We're done!");
 			[self stopLocationManager];
 			[self configureGetButton];
+			
+			if (distance > 0) {
+				_performingReverseGeocoding = NO;
+			}
 		}
 		
 		if (!_performingReverseGeocoding) {
@@ -124,6 +134,15 @@
 				_performingReverseGeocoding = NO;
 				[self updateLabels];
 			}];
+		} else if (distance < 1.0) {
+			NSTimeInterval timeInterval = [newLocation.timestamp timeIntervalSinceDate:_location.timestamp];
+			
+			if (timeInterval > 10) {
+				NSLog(@"*** Force done!");
+				[self stopLocationManager];
+				[self updateLabels];
+				[self configureGetButton];
+			}
 		}
 		
 	}
