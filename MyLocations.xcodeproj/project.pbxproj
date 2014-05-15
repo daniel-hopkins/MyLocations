@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C88ACAF192156A900D5B7F0 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */; };
+		6C88ACB21922EEA700D5B7F0 /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C88ACB11922EEA700D5B7F0 /* CategoryPickerViewController.m */; };
 		6CA309FD191D9CE40043C59C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA309FC191D9CE40043C59C /* Foundation.framework */; };
 		6CA309FF191D9CE40043C59C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA309FE191D9CE40043C59C /* CoreGraphics.framework */; };
 		6CA30A01191D9CE40043C59C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA30A00191D9CE40043C59C /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		6C88ACAD192156A900D5B7F0 /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
 		6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
+		6C88ACB01922EEA700D5B7F0 /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
+		6C88ACB11922EEA700D5B7F0 /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
 		6CA309F9191D9CE40043C59C /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA309FC191D9CE40043C59C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6CA309FE191D9CE40043C59C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,8 @@
 				6CA30A0E191D9CE40043C59C /* Main.storyboard */,
 				6C88ACAD192156A900D5B7F0 /* LocationDetailsViewController.h */,
 				6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */,
+				6C88ACB01922EEA700D5B7F0 /* CategoryPickerViewController.h */,
+				6C88ACB11922EEA700D5B7F0 /* CategoryPickerViewController.m */,
 				6CA30A14191D9CE40043C59C /* SecondViewController.h */,
 				6CA30A15191D9CE40043C59C /* SecondViewController.m */,
 				6CA30A03191D9CE40043C59C /* Supporting Files */,
@@ -267,6 +272,7 @@
 				6CA30A0D191D9CE40043C59C /* AppDelegate.m in Sources */,
 				6CA30A13191D9CE40043C59C /* CurrentLocationViewController.m in Sources */,
 				6CA30A09191D9CE40043C59C /* main.m in Sources */,
+				6C88ACB21922EEA700D5B7F0 /* CategoryPickerViewController.m in Sources */,
 				6C88ACAF192156A900D5B7F0 /* LocationDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
