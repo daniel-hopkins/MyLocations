@@ -87,4 +87,13 @@
 	}
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"PickedCategory"]) {
+		UITableViewCell *cell = sender;
+		NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+		self.selectedCategoryName = _categories[indexPath.row];
+	}
+}
+
 @end
