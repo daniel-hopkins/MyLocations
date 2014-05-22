@@ -103,6 +103,7 @@
 	hudView.text = @"Tagged";
 
 	//[self closeScreen];
+	[self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
 }
 
 - (IBAction)cancel:(id)sender
