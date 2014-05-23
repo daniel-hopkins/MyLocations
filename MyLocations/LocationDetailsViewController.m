@@ -9,6 +9,7 @@
 #import "LocationDetailsViewController.h"
 #import "CategoryPickerViewController.h"
 #import "HudView.h"
+#import "Location.h"
 
 @interface LocationDetailsViewController () <UITextViewDelegate>
 
@@ -25,6 +26,7 @@
 {
 	NSString *_descriptionText;
 	NSString *_categoryName;
+	NSDate *_date;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -32,6 +34,7 @@
 	if ((self = [super initWithCoder:aDecoder])) {
 		_descriptionText = @"";
 		_categoryName = @"No Category";
+		_date = [NSDate date];
 	}
 	return self;
 }
@@ -55,7 +58,7 @@
 		self.addressLabel.text = @"No Address Found";
 	}
 	
-	self.dateLabel.text = [self formatDate:[NSDate date]];
+	self.dateLabel.text = [self formatDate:_date];
 	
 	UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)];
 	gestureRecognizer.cancelsTouchesInView = NO;
@@ -101,8 +104,24 @@
 {
 	HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
 	hudView.text = @"Tagged";
+	
+	//1
+	Location *location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+	
+	//2
+	location.locationDescription = _descriptionText;
+	location.category = _categoryName;
+	location.latitude = @(self.coordinate.latitude);
+	location.longitude = @(self.coordinate.longitude);
+	location.date = _date;
+	location.placemark = self.placemark;
+	
+	NSError *error;
+	if (![self.managedObjectContext save:&error]) {
+		NSLog(@"Error: %@", error);
+		abort();
+	}
 
-	//[self closeScreen];
 	[self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
 }
 
