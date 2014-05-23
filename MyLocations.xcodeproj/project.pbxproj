@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6C78D419192D5F82000E1C8C /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C78D418192D5F82000E1C8C /* HudView.m */; };
+		6C78D41B192EC58F000E1C8C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C78D41A192EC58F000E1C8C /* CoreData.framework */; };
+		6C78D41E192EC5C3000E1C8C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C78D41C192EC5C3000E1C8C /* DataModel.xcdatamodeld */; };
+		6C78D421192ECA43000E1C8C /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C78D420192ECA43000E1C8C /* Location.m */; };
 		6C88ACAF192156A900D5B7F0 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */; };
 		6C88ACB21922EEA700D5B7F0 /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C88ACB11922EEA700D5B7F0 /* CategoryPickerViewController.m */; };
 		6CA309FD191D9CE40043C59C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA309FC191D9CE40043C59C /* Foundation.framework */; };
@@ -41,6 +44,10 @@
 /* Begin PBXFileReference section */
 		6C78D417192D5F82000E1C8C /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
 		6C78D418192D5F82000E1C8C /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
+		6C78D41A192EC58F000E1C8C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6C78D41D192EC5C3000E1C8C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		6C78D41F192ECA43000E1C8C /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		6C78D420192ECA43000E1C8C /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		6C88ACAD192156A900D5B7F0 /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
 		6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 		6C88ACB01922EEA700D5B7F0 /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
@@ -74,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C78D41B192EC58F000E1C8C /* CoreData.framework in Frameworks */,
 				6CA30A35191DA6320043C59C /* CoreLocation.framework in Frameworks */,
 				6CA309FF191D9CE40043C59C /* CoreGraphics.framework in Frameworks */,
 				6CA30A01191D9CE40043C59C /* UIKit.framework in Frameworks */,
@@ -116,6 +124,7 @@
 		6CA309FB191D9CE40043C59C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6C78D41A192EC58F000E1C8C /* CoreData.framework */,
 				6CA30A34191DA6320043C59C /* CoreLocation.framework */,
 				6CA309FC191D9CE40043C59C /* Foundation.framework */,
 				6CA309FE191D9CE40043C59C /* CoreGraphics.framework */,
@@ -134,6 +143,9 @@
 				6CA30A12191D9CE40043C59C /* CurrentLocationViewController.m */,
 				6CA30A17191D9CE50043C59C /* Images.xcassets */,
 				6CA30A0E191D9CE40043C59C /* Main.storyboard */,
+				6C78D41C192EC5C3000E1C8C /* DataModel.xcdatamodeld */,
+				6C78D41F192ECA43000E1C8C /* Location.h */,
+				6C78D420192ECA43000E1C8C /* Location.m */,
 				6C88ACAD192156A900D5B7F0 /* LocationDetailsViewController.h */,
 				6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */,
 				6C78D417192D5F82000E1C8C /* HudView.h */,
@@ -274,8 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CA30A16191D9CE40043C59C /* SecondViewController.m in Sources */,
+				6C78D41E192EC5C3000E1C8C /* DataModel.xcdatamodeld in Sources */,
 				6CA30A0D191D9CE40043C59C /* AppDelegate.m in Sources */,
 				6CA30A13191D9CE40043C59C /* CurrentLocationViewController.m in Sources */,
+				6C78D421192ECA43000E1C8C /* Location.m in Sources */,
 				6CA30A09191D9CE40043C59C /* main.m in Sources */,
 				6C78D419192D5F82000E1C8C /* HudView.m in Sources */,
 				6C88ACB21922EEA700D5B7F0 /* CategoryPickerViewController.m in Sources */,
@@ -496,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6C78D41C192EC5C3000E1C8C /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6C78D41D192EC5C3000E1C8C /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 6C78D41D192EC5C3000E1C8C /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6CA309F1191D9CE40043C59C /* Project object */;
 }
