@@ -11,6 +11,8 @@
 		6C78D41B192EC58F000E1C8C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C78D41A192EC58F000E1C8C /* CoreData.framework */; };
 		6C78D41E192EC5C3000E1C8C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C78D41C192EC5C3000E1C8C /* DataModel.xcdatamodeld */; };
 		6C78D421192ECA43000E1C8C /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C78D420192ECA43000E1C8C /* Location.m */; };
+		6C78D42419351228000E1C8C /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C78D42319351228000E1C8C /* LocationsViewController.m */; };
+		6C78D4271935282A000E1C8C /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C78D4261935282A000E1C8C /* LocationCell.m */; };
 		6C88ACAF192156A900D5B7F0 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */; };
 		6C88ACB21922EEA700D5B7F0 /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C88ACB11922EEA700D5B7F0 /* CategoryPickerViewController.m */; };
 		6CA309FD191D9CE40043C59C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA309FC191D9CE40043C59C /* Foundation.framework */; };
@@ -48,6 +50,10 @@
 		6C78D41D192EC5C3000E1C8C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		6C78D41F192ECA43000E1C8C /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		6C78D420192ECA43000E1C8C /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		6C78D42219351228000E1C8C /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
+		6C78D42319351228000E1C8C /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
+		6C78D4251935282A000E1C8C /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
+		6C78D4261935282A000E1C8C /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		6C88ACAD192156A900D5B7F0 /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
 		6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 		6C88ACB01922EEA700D5B7F0 /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
@@ -139,10 +145,14 @@
 			children = (
 				6CA30A0B191D9CE40043C59C /* AppDelegate.h */,
 				6CA30A0C191D9CE40043C59C /* AppDelegate.m */,
+				6C78D4251935282A000E1C8C /* LocationCell.h */,
+				6C78D4261935282A000E1C8C /* LocationCell.m */,
 				6CA30A11191D9CE40043C59C /* CurrentLocationViewController.h */,
 				6CA30A12191D9CE40043C59C /* CurrentLocationViewController.m */,
 				6CA30A17191D9CE50043C59C /* Images.xcassets */,
 				6CA30A0E191D9CE40043C59C /* Main.storyboard */,
+				6C78D42219351228000E1C8C /* LocationsViewController.h */,
+				6C78D42319351228000E1C8C /* LocationsViewController.m */,
 				6C78D41C192EC5C3000E1C8C /* DataModel.xcdatamodeld */,
 				6C78D41F192ECA43000E1C8C /* Location.h */,
 				6C78D420192ECA43000E1C8C /* Location.m */,
@@ -292,7 +302,9 @@
 				6C78D421192ECA43000E1C8C /* Location.m in Sources */,
 				6CA30A09191D9CE40043C59C /* main.m in Sources */,
 				6C78D419192D5F82000E1C8C /* HudView.m in Sources */,
+				6C78D42419351228000E1C8C /* LocationsViewController.m in Sources */,
 				6C88ACB21922EEA700D5B7F0 /* CategoryPickerViewController.m in Sources */,
+				6C78D4271935282A000E1C8C /* LocationCell.m in Sources */,
 				6C88ACAF192156A900D5B7F0 /* LocationDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
