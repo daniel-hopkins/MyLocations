@@ -91,6 +91,16 @@
 {
     if ([segue.identifier isEqualToString:@"EditLocation"]) {
         UINavigationController *navigationController = segue.destinationViewController;
+		
+		LocationDetailsViewController *controller = (LocationDetailsViewController *) navigationController.topViewController;
+		
+		controller.managedObjectContext = self.managedObjectContext;
+		
+		NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+		
+		Location *location = _locations[indexPath.row];
+		controller.locationToEdit = location;
+		
     }
 }
 

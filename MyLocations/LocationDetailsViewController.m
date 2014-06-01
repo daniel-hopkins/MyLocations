@@ -27,6 +27,7 @@
 	NSString *_descriptionText;
 	NSString *_categoryName;
 	NSDate *_date;
+//	Location *_locationToEdit;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -42,6 +43,10 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+	
+	if (self.locationToEdit != nil) {
+		self.title = @"Edit Location";
+	}
 	
 	self.descriptionTextView.text = _descriptionText;
 	self.categoryLabel.text = _categoryName;
@@ -103,11 +108,20 @@
 - (IBAction)done:(id)sender
 {
 	HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
-	hudView.text = @"Tagged";
 	
-	//1
-	Location *location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+	Location *location = nil;
 	
+	if (self.locationToEdit != nil) {
+		hudView.text = @"Updated";
+		location = self.locationToEdit;
+	} else {
+		hudView.text = @"Tagged";
+		location = [NSEntityDescription
+					insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+	}
+	
+	location.locationDescription = _descriptionText;
+		
 	//2
 	location.locationDescription = _descriptionText;
 	location.category = _categoryName;
@@ -142,6 +156,23 @@
 - (void)closeScreen
 {
 	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)setLocationToEdit:(Location *)newLocationToEdit
+{
+	NSLog(@"inside setLocationToEdit %@", newLocationToEdit);
+	if (_locationToEdit != newLocationToEdit) {
+		_locationToEdit = newLocationToEdit;
+		
+		_descriptionText = _locationToEdit.locationDescription;
+		_categoryName = _locationToEdit.category;
+		_date = _locationToEdit.date;
+		
+		self.coordinate = CLLocationCoordinate2DMake(
+						 [_locationToEdit.latitude doubleValue],
+						 [_locationToEdit.longitude doubleValue]);
+		self.placemark = _locationToEdit.placemark;
+	}
 }
 
 #pragma mark - UITableViewDelegate
