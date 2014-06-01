@@ -46,6 +46,7 @@
 	[super viewDidLoad];
 	[NSFetchedResultsController deleteCacheWithName:@"Locations"];
 	[self performFetch];
+	self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)performFetch
@@ -96,6 +97,21 @@
 										  location.placemark.locality];
 	} else {
 		locationCell.addressLabel.text = [NSString stringWithFormat:@"Lat: %.8f, Long: %.8f", [location.latitude doubleValue],[location.longitude doubleValue]];
+	}
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (editingStyle == UITableViewCellEditingStyleDelete) {
+		Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		
+		[self.managedObjectContext deleteObject:location];
+		
+		NSError *error;
+		if (![self.managedObjectContext save:&error]) {
+			FATAL_CORE_DATA_ERROR(error);
+			return;
+		}
 	}
 }
 
