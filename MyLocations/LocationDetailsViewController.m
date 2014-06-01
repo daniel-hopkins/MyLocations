@@ -51,9 +51,6 @@
 	self.descriptionTextView.text = _descriptionText;
 	self.categoryLabel.text = _categoryName;
 	
-	self.descriptionTextView.text = @"";
-	self.categoryLabel.text = @"";
-	
 	self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", self.coordinate.latitude];
 	self.longitudeLabel.text = [NSString stringWithFormat:@"%.8f", self.coordinate.longitude];
 	
