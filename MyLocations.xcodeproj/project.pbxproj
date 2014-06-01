@@ -15,6 +15,7 @@
 		6C78D4271935282A000E1C8C /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C78D4261935282A000E1C8C /* LocationCell.m */; };
 		6C88ACAF192156A900D5B7F0 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */; };
 		6C88ACB21922EEA700D5B7F0 /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C88ACB11922EEA700D5B7F0 /* CategoryPickerViewController.m */; };
+		6C8DDFD7193BDFC400EB1666 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8DDFD6193BDFC400EB1666 /* MapKit.framework */; };
 		6CA309FD191D9CE40043C59C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA309FC191D9CE40043C59C /* Foundation.framework */; };
 		6CA309FF191D9CE40043C59C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA309FE191D9CE40043C59C /* CoreGraphics.framework */; };
 		6CA30A01191D9CE40043C59C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA30A00191D9CE40043C59C /* UIKit.framework */; };
@@ -58,6 +59,7 @@
 		6C88ACAE192156A900D5B7F0 /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 		6C88ACB01922EEA700D5B7F0 /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
 		6C88ACB11922EEA700D5B7F0 /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
+		6C8DDFD6193BDFC400EB1666 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6CA309F9191D9CE40043C59C /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA309FC191D9CE40043C59C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6CA309FE191D9CE40043C59C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C8DDFD7193BDFC400EB1666 /* MapKit.framework in Frameworks */,
 				6C78D41B192EC58F000E1C8C /* CoreData.framework in Frameworks */,
 				6CA30A35191DA6320043C59C /* CoreLocation.framework in Frameworks */,
 				6CA309FF191D9CE40043C59C /* CoreGraphics.framework in Frameworks */,
@@ -130,6 +133,7 @@
 		6CA309FB191D9CE40043C59C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6C8DDFD6193BDFC400EB1666 /* MapKit.framework */,
 				6C78D41A192EC58F000E1C8C /* CoreData.framework */,
 				6CA30A34191DA6320043C59C /* CoreLocation.framework */,
 				6CA309FC191D9CE40043C59C /* Foundation.framework */,
