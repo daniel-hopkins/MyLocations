@@ -121,8 +121,6 @@
 	}
 	
 	location.locationDescription = _descriptionText;
-		
-	//2
 	location.locationDescription = _descriptionText;
 	location.category = _categoryName;
 	location.latitude = @(self.coordinate.latitude);
@@ -144,6 +142,10 @@
 {
 	[self closeScreen];
 }
+- (void)closeScreen
+{
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -151,11 +153,6 @@
 		CategoryPickerViewController *controller = segue.destinationViewController;
 		controller.selectedCategoryName = _categoryName;
 	}
-}
-
-- (void)closeScreen
-{
-	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setLocationToEdit:(Location *)newLocationToEdit
